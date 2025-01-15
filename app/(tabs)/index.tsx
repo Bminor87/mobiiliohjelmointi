@@ -39,7 +39,7 @@ export default function HomeScreen() {
 
   const startGame = () => {
     setFresh(true);
-    setRandNumber(Math.floor(Math.random() * 100));
+    setRandNumber(Math.floor(Math.random() * 100) + 1);
     setResult("Arvaa mitä lukua ajattelen (1-100)");
     setInput("");
     setTries(0);
