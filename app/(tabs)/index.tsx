@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   Image,
   StyleSheet,
@@ -14,7 +14,7 @@ import { ThemedView } from "@/components/ThemedView";
 export default function HomeScreen() {
   const [input1, setInput1] = useState("");
   const [input2, setInput2] = useState("");
-  const [result, setResult] = useState(0);
+  const [result, setResult]: any = useState(0);
 
   const colorScheme = useColorScheme();
 
@@ -35,7 +35,9 @@ export default function HomeScreen() {
         <ThemedText type="title">Laskin</ThemedText>
       </ThemedView>
       <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Tulos: {result}</ThemedText>
+        <ThemedText type="subtitle">
+          Tulos: {isNaN(result) ? "Käytä vain numeroita!" : result}
+        </ThemedText>
       </ThemedView>
       <ThemedView style={styles.stepContainer}>
         <TextInput
