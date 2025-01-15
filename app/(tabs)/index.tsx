@@ -12,14 +12,42 @@ import { ThemedText } from "@/components/ThemedText";
 import { ThemedView } from "@/components/ThemedView";
 
 export default function HomeScreen() {
-  const [input1, setInput1] = useState("");
-  const [input2, setInput2] = useState("");
+  const [fresh, setFresh] = useState(true);
+  const [input, setInput] = useState("");
   const [result, setResult]: any = useState(0);
+  const [randNumber, setRandNumber] = useState(0);
+  const [tries, setTries] = useState(0);
+  const [record, setRecrod] = useState(0);
 
   const colorScheme = useColorScheme();
 
-  const add = () => setResult(parseInt(input1) + parseInt(input2));
-  const subtract = () => setResult(parseInt(input1) - parseInt(input2));
+  const guess = () => {
+    setTries(tries + 1);
+    if (parseInt(input) === randNumber) {
+      setResult("Oikein! Arvasit " + tries + " kertaa.");
+      if (record === 0 || tries < record) {
+        setRecrod(tries);
+      }
+      setFresh(false);
+    } else if (parseInt(input) < randNumber) {
+      setResult(parseInt(input) + " on liian pieni!");
+    } else {
+      setResult(parseInt(input) + " on liian suuri!");
+    }
+    setInput("");
+  };
+
+  const startGame = () => {
+    setFresh(true);
+    setRandNumber(Math.floor(Math.random() * 100));
+    setResult("Arvaa mitä lukua ajattelen (1-100)");
+    setInput("");
+    setTries(0);
+  };
+
+  useEffect(() => {
+    startGame();
+  }, []);
 
   return (
     <ParallaxScrollView
@@ -32,12 +60,10 @@ export default function HomeScreen() {
       }
     >
       <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Laskin</ThemedText>
+        <ThemedText type="title">Arvauspeli</ThemedText>
       </ThemedView>
       <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">
-          Tulos: {isNaN(result) ? "Käytä vain numeroita!" : result}
-        </ThemedText>
+        <ThemedText type="subtitle">{result}</ThemedText>
       </ThemedView>
       <ThemedView style={styles.stepContainer}>
         <TextInput
@@ -48,32 +74,26 @@ export default function HomeScreen() {
               borderColor: colorScheme === "dark" ? "white" : "gray",
             },
           ]}
-          onChangeText={setInput1}
-          value={input1.toString()}
+          onChangeText={setInput}
+          value={input.toString()}
           keyboardType="numeric"
           placeholder="Syötä numero"
         />
-        <TextInput
-          style={[
-            styles.input,
-            {
-              color: colorScheme === "dark" ? "white" : "black",
-              borderColor: colorScheme === "dark" ? "white" : "gray",
-            },
-          ]}
-          onChangeText={setInput2}
-          value={input2.toString()}
-          keyboardType="numeric"
-          placeholder="Syötä toinen numero"
-        />
       </ThemedView>
       <ThemedView style={styles.buttonContainer}>
-        <TouchableOpacity style={styles.customButton} onPress={add}>
-          <Text style={styles.buttonText}>+</Text>
+        <TouchableOpacity
+          style={styles.customButton}
+          onPress={fresh ? guess : startGame}
+        >
+          <Text style={styles.buttonText}>
+            {fresh ? "Arvaa" : "Aloita Alusta"}
+          </Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.customButton} onPress={subtract}>
-          <Text style={styles.buttonText}>-</Text>
-        </TouchableOpacity>
+      </ThemedView>
+      <ThemedView style={styles.stepContainer}>
+        <ThemedText type="subtitle">
+          {record != 0 && "Session ennätys: " + record + " yritystä"}
+        </ThemedText>
       </ThemedView>
     </ParallaxScrollView>
   );
