@@ -20,12 +20,13 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     gap: 8,
   },
-  reactLogo: {
-    height: 178,
-    width: 290,
-    bottom: 0,
-    left: 0,
-    position: "absolute",
+  logo: {
+    width: 100,
+    height: 100,
+    marginLeft: "auto",
+    marginRight: "auto",
+    marginTop: 10,
+    marginBottom: 10,
   },
   input: {
     height: 40,
@@ -82,6 +83,10 @@ const styles = StyleSheet.create({
   youtubeLogo: {
     width: 140,
     height: 70,
+  },
+  convertedCurrency: {
+    fontSize: 20,
+    fontWeight: "bold",
   },
 });
 

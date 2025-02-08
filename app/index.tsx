@@ -2,7 +2,7 @@ import React from "react";
 
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-import Recipes from "./tabs/Recipes";
+import Converter from "./tabs/Converter";
 
 import { HistoryProvider } from "./historyContext";
 
@@ -12,7 +12,7 @@ export default function App() {
   return (
     <HistoryProvider>
       <Stack.Navigator>
-        <Stack.Screen name="Recipes" component={Recipes} />
+        <Stack.Screen name="Euromuuntaja" component={Converter} />
       </Stack.Navigator>
     </HistoryProvider>
   );
