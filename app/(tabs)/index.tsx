@@ -3,13 +3,12 @@ import {
   Image,
   StyleSheet,
   TextInput,
-  Text,
+  Text as ThemedText,
   TouchableOpacity,
   useColorScheme,
+  ScrollView as ParallaxScrollView,
+  View as ThemedView,
 } from "react-native";
-import ParallaxScrollView from "@/components/ParallaxScrollView";
-import { ThemedText } from "@/components/ThemedText";
-import { ThemedView } from "@/components/ThemedView";
 
 export default function HomeScreen() {
   const [fresh, setFresh] = useState(true);
@@ -85,9 +84,9 @@ export default function HomeScreen() {
           style={styles.customButton}
           onPress={fresh ? guess : startGame}
         >
-          <Text style={styles.buttonText}>
+          <ThemedText style={styles.buttonText}>
             {fresh ? "Arvaa" : "Aloita Alusta"}
-          </Text>
+          </ThemedText>
         </TouchableOpacity>
       </ThemedView>
       <ThemedView style={styles.stepContainer}>
