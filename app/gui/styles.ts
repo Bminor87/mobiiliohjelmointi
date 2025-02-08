@@ -53,6 +53,36 @@ const styles = StyleSheet.create({
     color: "white",
     fontWeight: "bold",
   },
+  recipeContainer: {
+    marginBottom: 10,
+    padding: 10,
+    borderWidth: 1,
+    borderRadius: 5,
+  },
+  recipeTitle: {
+    fontSize: 20,
+    fontWeight: "bold",
+    color: "#007BFF",
+  },
+  recipeYtLink: {
+    marginTop: 8,
+  },
+  thumbnail: {
+    width: 100,
+    height: 100,
+  },
+  imageContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+    marginTop: 10,
+  },
+  youtubeLogoContainer: {
+    marginLeft: 10,
+  },
+  youtubeLogo: {
+    width: 140,
+    height: 70,
+  },
 });
 
 export default styles;
