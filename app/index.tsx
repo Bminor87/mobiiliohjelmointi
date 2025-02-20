@@ -2,7 +2,7 @@ import React from "react";
 
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-import Maps from "./tabs/Maps";
+import Restaurants from "./tabs/Restaurants";
 
 import { HistoryProvider } from "./historyContext";
 
@@ -12,7 +12,7 @@ export default function App() {
   return (
     <HistoryProvider>
       <Stack.Navigator>
-        <Stack.Screen name="Kartat" component={Maps} />
+        <Stack.Screen name="Ravintolat" component={Restaurants} />
       </Stack.Navigator>
     </HistoryProvider>
   );
