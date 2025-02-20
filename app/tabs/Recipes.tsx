@@ -18,6 +18,7 @@ type Recipe = {
   strYoutube: string;
 };
 
+
 const Recipes = () => {
   const [input, setInput] = useState("");
   const [recipes, setRecipes]: [Recipe[], any] = useState([]);

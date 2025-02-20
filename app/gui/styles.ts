@@ -91,6 +91,24 @@ const styles = StyleSheet.create({
   map: {
     flex: 1,
   },
+  searchBoxContainer: {
+    position: "absolute",
+    top: 10,
+    width: "90%",
+    alignSelf: "center",
+    backgroundColor: "white",
+    borderRadius: 5,
+    padding: 5,
+    zIndex: 1,
+  },
+  
+  searchBox: {
+    height: 40,
+    paddingHorizontal: 10,
+    borderColor: "#ccc",
+    borderWidth: 1,
+    borderRadius: 5,
+  },
 });
 
 export default styles;
