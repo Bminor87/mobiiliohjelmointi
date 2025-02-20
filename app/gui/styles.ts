@@ -88,6 +88,9 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: "bold",
   },
+  map: {
+    flex: 1,
+  },
 });
 
 export default styles;
