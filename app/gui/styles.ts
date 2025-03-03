@@ -109,6 +109,19 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderRadius: 5,
   },
+
+  shoppingItem: {
+    display: "flex",
+    flexDirection: "row",
+    padding: 10,
+    borderBottomWidth: 1,
+    borderBottomColor: "#ccc",
+  },
+
+  simpleButton: {
+    paddingLeft: 10,
+    color: "blue",
+  }
 });
 
 export default styles;

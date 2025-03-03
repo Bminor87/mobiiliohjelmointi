@@ -2,7 +2,7 @@ import React from "react";
 
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-import Restaurants from "./tabs/Restaurants";
+import ShoppingList from "./tabs/ShoppingList";
 
 import { HistoryProvider } from "./historyContext";
 
@@ -12,7 +12,7 @@ export default function App() {
   return (
     <HistoryProvider>
       <Stack.Navigator>
-        <Stack.Screen name="Ravintolat" component={Restaurants} />
+        <Stack.Screen name="Ostoslista" component={ShoppingList} />
       </Stack.Navigator>
     </HistoryProvider>
   );
