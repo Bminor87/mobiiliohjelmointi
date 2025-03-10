@@ -6,6 +6,12 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     padding: 16,
   },
+  languageApp: {
+    flex: 1,
+    justifyContent: "center",
+    padding: 16,
+    gap: 8,
+  },
   titleContainer: {
     flexDirection: "row",
     alignItems: "center",
@@ -121,7 +127,36 @@ const styles = StyleSheet.create({
   simpleButton: {
     paddingLeft: 10,
     color: "blue",
-  }
+  },
+  contact: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    marginVertical: 10,
+  },
+  contactButtons: {
+    flexDirection: "row",
+    gap: 10,
+  },
+  contactTitle: {
+    fontSize: 20,
+    fontWeight: "bold",
+    marginTop: 5,
+  },
+  contactDetails: {
+    marginTop: 10,
+  },
+  activeButton: {
+    backgroundColor: "#007BFF",
+    color: "white",
+    padding: 10,
+    borderRadius: 5,
+  },
+  inactiveButton: {
+    backgroundColor: "#ccc",
+    color: "white",
+    padding: 10,
+    borderRadius: 5,
+  },
 });
 
 export default styles;
